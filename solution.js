@@ -1,6 +1,11 @@
 // You must RETURN your result in each function!
 
 function printNums(nums) {
+  const newArr = []
+  nums.forEach((element) => {
+    newArr.push(element)
+  })
+  return newArr
   /**
    *  Using .forEach, add each number in the nums array to a new array.
    * @param nums => [1,2,3,4]
@@ -8,6 +13,11 @@ function printNums(nums) {
 }
 
 function returnSums(nums) {
+  const newArray = []
+  nums.forEach((e, i) => {
+    newArray.push(e + i)
+  })
+  return newArray
   /**
    * Using forEach, push the sum of n plus the index
    * to a new array and return the new array
@@ -16,6 +26,11 @@ function returnSums(nums) {
 }
 
 function returnTotal(objs) {
+  let numbers = 0
+  objs.forEach((e, i) => {
+    numbers = numbers + e.n
+  })
+  return numbers
   /**
    * Using forEach return a number that is the total sum of all numbers in the array of objects.
    * The key for each object will be n
@@ -24,6 +39,11 @@ function returnTotal(objs) {
 }
 
 function printMoney(decimals) {
+  const newArray = []
+  decimals.map((money) => {
+    newArray.push('$' + money.toFixed(2))
+  })
+  return newArray
   /**
    * @param decimals => [2.30, 2.40, 32.99]
    * Using .map, return an array of decimals formatted as dollars.
@@ -36,6 +56,10 @@ function printMoney(decimals) {
 }
 
 function returnAllTrueValues(values) {
+  return values.filter((arg) => {
+    return arg.happy
+  })
+
   /**
    * @param values => [{name: 'Joe', happy:false}]
    * Using .filter, return an array of objects where happy equals true
@@ -43,6 +67,11 @@ function returnAllTrueValues(values) {
 }
 
 function addTwo(nums) {
+  const total = nums.reduce((acc, value) => {
+    return acc + (value + 2)
+  }, 0)
+  return total
+
   /**
    * @param nums => [1,2,3,4]
    * Using .reduce, return the total sum of all numbers.
@@ -53,6 +82,11 @@ function addTwo(nums) {
 }
 
 function joinStrings(strings) {
+  const newString = strings.reduce((acc, value) => {
+    return acc + value
+  })
+  return newString
+
   /**
    * @param strings => ['g', 'f', 'z']
    * Using .reduce, return a new string containing each string from the strings array.
